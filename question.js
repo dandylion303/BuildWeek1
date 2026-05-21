@@ -156,7 +156,38 @@ let timeLeft = 30;
 
 // CREAZIONE RISPOSTA
 
-function addAnswer(answer) {
+
+function addAnswer(textValue) {
+  const answerDiv = document.getElementById("answers")
+  const input = document.createElement("input")
+  const label = document.createElement("label")
+
+
+
+  label.innerText = textValue
+
+  input.setAttribute("class", "answer-button")
+  input.setAttribute("type", "radio")
+  input.setAttribute("name", "ask")
+  input.setAttribute("value", textValue)
+  
+  label.setAttribute("for", "answer-button")
+
+  input.addEventListener("click", () => {
+    selectAnswer(textValue);
+  });
+
+
+  answerDiv.appendChild(input)
+  answerDiv.appendChild(label)
+
+
+} 
+
+
+
+
+/*function addAnswer(answer) {
   // CREO BOTTONE
 
   const button = document.createElement("button");
@@ -178,7 +209,7 @@ function addAnswer(answer) {
   // AGGIUNGO BOTTONE
 
   answerDiv.appendChild(button);
-}
+} */
 
 // MOSTRA DOMANDA
 
