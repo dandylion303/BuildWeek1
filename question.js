@@ -190,10 +190,12 @@ function showQuestion() {
   // CONTROLLO FINE QUIZ
 
   if (currentQuestion >= questions.length) {
-    alert("Quiz Finished! Score: " + score);
+
+    window.location.href =
+      `results.html?score=${score}&total=${questions.length}`;
 
     return;
-  }
+}
 
   // PRENDO DOMANDA ATTUALE
 
