@@ -261,13 +261,33 @@ function showQuestion() {
   }
 
   // AVVIO TIMER
+  
 
   startTimer();
 }
 
 // TIMER
+const fullDashArray = 2 * Math.PI * 90; // Circonferenza (2 * π * raggio)
+const timeLimit = 30
 
+
+const pathElement = document.getElementById("timer-path");
+const labelElement = document.getElementById("timer");
+
+// Inizializza il cerchio
+pathElement.setAttribute("stroke-dasharray", fullDashArray);
+
+function formatTime(time) {
+  return time; 
+}
+
+function setCircleDasharray(fraction) {
+  const dashoffset = fullDashArray - (fraction * fullDashArray);
+  pathElement.setAttribute("stroke-dashoffset", dashoffset);
+}
 function startTimer() {
+  const timeFraction = timeLeft / timeLimit;
+    setCircleDasharray(timeFraction);
   // RESET TEMPO
 
   timeLeft = 30;
@@ -282,6 +302,9 @@ function startTimer() {
     // DIMINUISCO TEMPO
 
     timeLeft--;
+    labelElement.innerHTML = formatTime(timeLeft);
+    const timeFraction = timeLeft / timeLimit;
+    setCircleDasharray(timeFraction);
 
     // AGGIORNO HTML TIMER
 
@@ -334,3 +357,33 @@ function selectAnswer(answer) {
 // AVVIO QUIZ
 
 showQuestion();
+
+
+
+
+///////////////////////////
+
+
+
+
+
+/*
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timeLeft -= 1;
+    
+    
+    // Calcola la frazione rimanente e aggiorna il cerchio
+    const timeFraction = timeLeft / TIME_LIMIT;
+    setCircleDasharray(timeFraction);
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      alert("Tempo scaduto!");
+    }
+  }, 1000);
+}*/
+
+// Avvia il timer automaticamente
+
+

@@ -175,3 +175,45 @@ input[type="checkbox"]:checked {
   gap: 20px;
   margin-top: 50px;
 }
+/*RESULTS*/
+#mainResults{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#resultsParagraf{
+  
+}
+.timer-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-svg {
+  transform: rotate(-90deg); /* Fa partire il cerchio dall'alto */
+}
+
+.timer-background {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 8;
+}
+
+.timer-path {
+  fill: none;
+  stroke: #3498db;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+.timer-label {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}

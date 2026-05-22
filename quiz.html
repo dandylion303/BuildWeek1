@@ -1,24 +1,39 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"/>
-    <link rel="stylesheet" href="./style.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Quiz</title>
   </head>
 
   <body>
     <header>
       <img src="./assets/epicode_logo.png" alt="Epicode logo" />
+      <div class="timer-container">
+        <svg class="timer-svg" width="200" height="200">
+          <circle class="timer-background" cx="100" cy="100" r="90"></circle>
+          <circle
+            class="timer-path"
+            cx="100"
+            cy="100"
+            r="90"
+            id="timer-path"
+          ></circle>
+        </svg>
+        <div class="timer-label" id="timer">30</div>
+      </div>
     </header>
 
     <main>
       <h1 id="questionText"></h1>
-      <p>Time left: <span id="timer"></span></p>
+     
       <div id="answers">
         <p class="question"></p>
 
@@ -52,6 +67,7 @@
           name="cpu"
           value="control_processing_unit"
         />
+
         <label for="opt4"></label>
       </div>
     </main>
