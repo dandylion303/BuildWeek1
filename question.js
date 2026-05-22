@@ -309,6 +309,7 @@ function startTimer() {
     // AGGIORNO HTML TIMER
 
     timerElement.innerText = timeLeft;
+    
 
     // TEMPO FINITO
 
