@@ -19,6 +19,7 @@ body {
   flex-direction: column;
 }
 
+
 /* HEADER */
 header {
   position: relative;
@@ -263,27 +264,6 @@ input[type="checkbox"]:checked {
   margin: 6px 0;
 }
 
-/*NON TROVO LA CLASSE CORRISPONDENTE IN HTML
-.quiz-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* #questiontext non esiste in HTML
-
-#questiontext strong {
-  font-weight: 700;
-}
-
-
-/*ANSWER NON LA TROVO 
-.answer {
-  width: calc(50% - 14px);
-}
-*/
 
 #answers {
   width: 100%;
@@ -320,24 +300,6 @@ input[type="checkbox"]:checked {
   color: white;
 }
 
-/*
-.answer input[type="radio"]:checked + label {
-  background: linear-gradient(45deg, #d20094, #900080);
-  border: none;
-  box-shadow:
-    0 0 20px,
-    rgba(210, 0, 148, 0.5);
-}
-
-
-ANCHE QUESTA NON LA TROVO IN HTML
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 20px;
-}
-*/
 
 .counter {
   font-family: "Outfit", sans-serif;
@@ -357,7 +319,7 @@ ANCHE QUESTA NON LA TROVO IN HTML
 }
 
 /*MAIN QUIZ PAGE*/
-#mainQuiz {
+.mainQuiz {
   margin-top: 100px;
   width: 100%;
   max-width: 960px;
@@ -366,6 +328,8 @@ ANCHE QUESTA NON LA TROVO IN HTML
   align-items: center;
   justify-content: center;
   flex: 1;
+  margin-left: auto;
+  margin-right: auto;
   
 }
 
@@ -375,8 +339,7 @@ ANCHE QUESTA NON LA TROVO IN HTML
   opacity: 0.2;
 }
 
-#mainResults {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+#stellina {
+  margin-bottom: 50px;
 }
