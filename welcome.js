@@ -6,6 +6,8 @@ const checkbox =
 const button =
   document.getElementById("proceed");
 
+const overlayAlert = document.getElementById("overlayAlert")
+const overlayText = document.getElementById("overlayText")
 
 
 // EVENTO CLICK BOTTONE
@@ -24,11 +26,20 @@ button.addEventListener("click", () => {
   } else {
 
     // ALERT ERRORE
+     document.getElementById("overlayAlert").style.display = "block";
 
-    alert(
-      "You must accept the promise before proceeding"
-    );
-
+    // USCITA AL CLICK 
+    overlayAlert.addEventListener('click', (e) => {
+      if (e.target === overlayAlert) {
+        overlayAlert.style.display = 'none';
+      }
+    })
+    overlayText.addEventListener('click', (e) => {
+      if (e.target === overlayText) {
+        overlayAlert.style.display = 'none';
+      }
+    })
   }
 
 });
+
