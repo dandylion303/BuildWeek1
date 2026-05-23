@@ -8,4 +8,15 @@ document.getElementById("score").innerText = score;
 document.getElementById("total").innerText = total;
 // 3 MOSTRO STELLINE ALLA FINE DEL DOCUMENTO
 
+for (let i=0; i<total; i++){
+    const star = document.createElement("img")
+    star.setAttribute("src", "./assets/star.svg")
+    if (i<score) {
+         star.setAttribute("class", "correctAnswers")
+         
+    } else {
+        star.setAttribute("class", "incorrectAnswers")
+    }
 
+    stellina.appendChild(star)
+}
