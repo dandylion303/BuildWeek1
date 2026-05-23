@@ -173,11 +173,7 @@ function addAnswer(textValue) {
   
   label.setAttribute("for", "answer-button")
 
-<<<<<<< HEAD
   label.addEventListener("click", () => {
-=======
-  input.addEventListener("click", () => {
->>>>>>> acc9e56df16a7a42ea848312378bfbe490cd1dab
     selectAnswer(textValue);
   });
 
