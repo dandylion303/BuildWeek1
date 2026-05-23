@@ -1,63 +1,62 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"/>
-    <link rel="stylesheet" href="./style.css"/>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
     <title>Quiz</title>
   </head>
 
   <body>
     <header>
       <img src="./assets/epicode_logo.png" alt="Epicode logo" />
+
+      <div class="timer-container">
+        <svg class="timer-svg" width="200" height="200">
+          <circle class="timer-background" cx="100" cy="100" r="90"></circle>
+
+          <circle
+            class="timer-path"
+            cx="100"
+            cy="100"
+            r="90"
+            id="timer-path"
+          ></circle>
+        </svg>
+
+        <div class="timer-inner">
+          <span class="timer-small"> SECONDS </span>
+
+          <div class="timer-number" id="timer">30</div>
+
+          <span class="timer-small"> REMAINING </span>
+        </div>
+      </div>
     </header>
 
-    <main>
+    <main id="mainQuiz">
       <h1 id="questionText"></h1>
-      <p>Time left: <span id="timer"></span></p>
-      <div id="answers">
-        <p class="question">"What does CPU stand for?</p>
 
-        <input
-          id="opt1"
-          type="radio"
-          name="cpu"
-          value="central_processing_unit"
-        />
-        <label for="opt1">Central Processing Unit</label><br />
-
-        <input
-          id="opt2"
-          type="radio"
-          name="cpu"
-          value="computer_personal_unit"
-        />
-        <label for="opt2">Computer Personal Unit</label><br />
-
-        <input
-          id="opt3"
-          type="radio"
-          name="cpu"
-          value="central_processor_unit"
-        />
-        <label for="opt3">Central Processor Unit</label><br />
-
-        <input
-          id="opt4"
-          type="radio"
-          name="cpu"
-          value="control_processing_unit"
-        />
-        <label for="opt4">Control Processing Unit</label>
-      </div>
+      <div id="answers"></div>
     </main>
 
     <footer class="counter">
-      QUESTION <span id="questionNumber">1</span> / 10
+      QUESTION
+      <span id="questionNumber"> 1 </span>
+
+      / 10
     </footer>
 
     <script src="./question.js"></script>

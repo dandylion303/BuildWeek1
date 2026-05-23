@@ -156,7 +156,38 @@ let timeLeft = 30;
 
 // CREAZIONE RISPOSTA
 
-function addAnswer(answer) {
+
+function addAnswer(textValue) {
+  const answerDiv = document.getElementById("answers")
+  const input = document.createElement("input")
+  const label = document.createElement("label")
+
+
+
+  label.innerText = textValue
+
+  input.setAttribute("class", "answer-button")
+  input.setAttribute("type", "radio")
+  input.setAttribute("name", "ask")
+  input.setAttribute("value", textValue)
+  
+  label.setAttribute("for", "answer-button")
+
+  label.addEventListener("click", () => {
+    selectAnswer(textValue);
+  });
+
+
+  answerDiv.appendChild(input)
+  answerDiv.appendChild(label)
+
+
+} 
+
+
+
+
+/*function addAnswer(answer) {
   // CREO BOTTONE
 
   const button = document.createElement("button");
@@ -178,7 +209,7 @@ function addAnswer(answer) {
   // AGGIUNGO BOTTONE
 
   answerDiv.appendChild(button);
-}
+} */
 
 // MOSTRA DOMANDA
 
@@ -230,13 +261,33 @@ function showQuestion() {
   }
 
   // AVVIO TIMER
+  
 
   startTimer();
 }
 
 // TIMER
+const fullDashArray = 2 * Math.PI * 90; // Circonferenza (2 * π * raggio)
+const timeLimit = 30
 
+
+const pathElement = document.getElementById("timer-path");
+const labelElement = document.getElementById("timer");
+
+// Inizializza il cerchio
+pathElement.setAttribute("stroke-dasharray", fullDashArray);
+
+function formatTime(time) {
+  return time; 
+}
+
+function setCircleDasharray(fraction) {
+  const dashoffset = fullDashArray - (fraction * fullDashArray);
+  pathElement.setAttribute("stroke-dashoffset", dashoffset);
+}
 function startTimer() {
+  const timeFraction = timeLeft / timeLimit;
+    setCircleDasharray(timeFraction);
   // RESET TEMPO
 
   timeLeft = 30;
@@ -251,10 +302,14 @@ function startTimer() {
     // DIMINUISCO TEMPO
 
     timeLeft--;
+    labelElement.innerHTML = formatTime(timeLeft);
+    const timeFraction = timeLeft / timeLimit;
+    setCircleDasharray(timeFraction);
 
     // AGGIORNO HTML TIMER
 
     timerElement.innerText = timeLeft;
+    
 
     // TEMPO FINITO
 
@@ -303,3 +358,33 @@ function selectAnswer(answer) {
 // AVVIO QUIZ
 
 showQuestion();
+
+
+
+
+///////////////////////////
+
+
+
+
+
+/*
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timeLeft -= 1;
+    
+    
+    // Calcola la frazione rimanente e aggiorna il cerchio
+    const timeFraction = timeLeft / TIME_LIMIT;
+    setCircleDasharray(timeFraction);
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      alert("Tempo scaduto!");
+    }
+  }, 1000);
+}*/
+
+// Avvia il timer automaticamente
+
+
